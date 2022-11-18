@@ -208,7 +208,7 @@ button.submit__button {
         font-size: 2rem;
     }
     .select__method p {
-        font-size: 1rem;
+        font-size: 1.31rem;
     }
 }
 
@@ -219,7 +219,7 @@ button.submit__button {
         gap: 4rem;
     }
     .select__method {
-        width: 60%;
+        width: 90%;
         height: 50%;
 
         border-bottom: 0.7px solid #714dd936;

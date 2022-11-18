@@ -1,0 +1,51 @@
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    min-width: 1190px;
+
+    padding: 1rem;
+}
+.nav {
+    padding: 1.3rem 3rem;
+}
+
+.nav__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.section__name h3 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+.section__name::after {
+    content: "'";
+    position: absolute;
+    bottom: 0;
+    left: 29px;
+    width: 11rem;
+    height: 4px;
+    background-color: #714dd9;
+}
+
+.profile__section {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    cursor: pointer;
+}
+.profile__section span {
+    font-size: 1.4rem;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    min-width: 1190px;
+
+    padding: 1rem;
+    background-color: #f6fafb;
+    border-bottom: 2px solid #e9f3f5;
+}

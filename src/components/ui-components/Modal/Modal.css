@@ -5,13 +5,15 @@
     display: grid;
     place-content: center;
     justify-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
     width: 100%;
 }
 
 .backdrop {
     position: absolute;
     height: 100vh;
+    height: 100%;
     width: 100%;
     top: 0;
     background-color: #000;
@@ -64,9 +66,12 @@
     border: none;
 }
 
+@media screen and (max-width: 919px) {
+}
 @media screen and (max-width: 663px) {
     .modal__container {
         grid-template-columns: 1fr;
+        height: 126%;
     }
     .modal {
         min-width: auto;

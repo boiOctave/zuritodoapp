@@ -11,6 +11,7 @@ input::-webkit-inner-spin-button {
     padding-top: 15rem;
     padding-left: 3rem;
     display: flex;
+    position: relative;
 }
 
 .select__method {
@@ -264,5 +265,12 @@ button.submit__button {
     }
     .input___half {
         gap: 17rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .input___half {
+        justify-content: space-between;
+        gap: 0;
     }
 }

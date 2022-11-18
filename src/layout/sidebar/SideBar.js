@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 //assets Imports
 import logo from '../../assets/images/Frame 34483logo.svg';
@@ -8,34 +9,43 @@ import notificationIcon from '../../assets/images/notificationnotification .svg'
 import assistantIcon from '../../assets/images/messageassistant.svg';
 
 import './Sidebar.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { closeSideBar } from '../../features/sideBar/sideBarSlice';
 
+//This is an array of Objects to house each Navigation Link
+const Links = [
+    {
+        name: 'Home',
+        icon: homeIcon,
+    },
+    {
+        name: 'Notifications',
+        icon: notificationIcon,
+    },
+    {
+        name: 'Assistant',
+        icon: assistantIcon,
+    },
+];
 const SideBar = () => {
-    //This is an array of Objects to house each Navigation Link
-
-    const Links = [
-        {
-            name: 'Home',
-            icon: homeIcon,
-        },
-        {
-            name: 'Notifications',
-            icon: notificationIcon,
-        },
-        {
-            name: 'Assistant',
-            icon: assistantIcon,
-        },
-    ];
+    const sideBar = useSelector(({ sideBar }) => sideBar.open);
+    const dispatch = useDispatch();
+    const handleBar = () => {
+        dispatch(closeSideBar());
+    };
     return (
-        <div className='sidebar__container'>
+        <div className={`sidebar__container ${sideBar ? 'openBar' : ''}`}>
             <div className='logo__container'>
                 <img className='logo' src={logo} alt='logo' />
             </div>
             <div className='todo__button'>
-                <div className='button todo__button'>
+                <motion.div
+                    whileHover={{ scale: 1.04 }}
+                    whileTap={{ scale: 0.9 }}
+                    className='button todo__button'>
                     <img src={add} alt='add' />
                     <span>New to do</span>
-                </div>
+                </motion.div>
             </div>
             <div className='sidebar__links'>
                 {/* Mapping Over each Link*/}
@@ -48,6 +58,9 @@ const SideBar = () => {
                         </a>
                     </div>
                 ))}
+            </div>
+            <div className='closeMenu' onClick={handleBar}>
+                <span className='material-symbols-outlined'>close</span>
             </div>
         </div>
     );

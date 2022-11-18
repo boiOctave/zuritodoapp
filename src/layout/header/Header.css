@@ -7,12 +7,16 @@
     padding: 1rem;
     background-color: #f6fafb;
     border-bottom: 2px solid #e9f3f5;
+    z-index: 999;
+    display: grid;
+    place-items: center;
 }
 
 .nav {
     padding: 1.3rem 3rem;
     display: flex;
     justify-content: flex-end;
+    width: 100%;
 }
 
 .nav__content {
@@ -64,12 +68,12 @@
 }
 @media screen and (max-width: 929px) {
     .nav__content {
-        width: 60%;
+        width: 69%;
     }
 }
 @media screen and (max-width: 816px) {
     .nav__content {
-        width: 60%;
+        width: 65%;
     }
 }
 

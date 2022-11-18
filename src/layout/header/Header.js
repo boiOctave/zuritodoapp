@@ -5,6 +5,8 @@ import icon from '../../assets/images/Vectorchevron.svg';
 import avatar from '../../assets/images/Ellipse 125avatar.svg';
 import './Header.css';
 
+import { useDispatch, useSelector } from 'react-redux';
+import { openSideBar } from '../../features/sideBar/sideBarSlice';
 //array to hold user Information, Replace this with Api Data
 
 const userInfo = [
@@ -15,6 +17,13 @@ const userInfo = [
 ];
 
 const Header = ({ section }) => {
+    const sideBar = useSelector(({ sideBar }) => sideBar.open);
+    const dispatch = useDispatch();
+
+    const handleBar = () => {
+        dispatch(openSideBar());
+        console.log(sideBar);
+    };
     return (
         <header className='header'>
             <nav className='nav'>
@@ -22,7 +31,7 @@ const Header = ({ section }) => {
                     <div className='section__name'>
                         <h3>{section}</h3>
                     </div>
-                    <div className='hamburgerMenu'>
+                    <div className='hamburgerMenu' onClick={handleBar}>
                         <span className='material-symbols-outlined'>menu</span>
                     </div>
 

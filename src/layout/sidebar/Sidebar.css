@@ -1,20 +1,13 @@
-/* RE-USABLE CSS */
-
-.button {
-    width: 170px;
-    background-color: #714dd9;
-    padding: 1.4rem;
-    border-radius: 8px;
-}
-
 .sidebar__container {
     position: fixed;
     max-width: 250px;
     width: 100%;
     min-height: 100vh;
     padding: 2.4rem 4rem;
+    transition: all 0.5s ease;
     background-color: #f6fafb;
     border-right: 2px solid #e9f3f5;
+    z-index: 99999;
 }
 
 .logo__container {
@@ -47,9 +40,24 @@
     font-weight: 400;
     color: #333333;
 }
+.closeMenu {
+    display: none;
+}
 
 @media screen and (max-width: 780px) {
     .sidebar__container {
         left: -300px;
+    }
+    .sidebar__container.openBar {
+        left: 0px;
+    }
+    .closeMenu {
+        position: absolute;
+        left: 206px;
+        top: 28px;
+        cursor: pointer;
+    }
+    .closeMenu {
+        display: block;
     }
 }

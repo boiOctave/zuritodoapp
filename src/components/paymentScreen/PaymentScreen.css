@@ -132,6 +132,8 @@ button.submit__button {
     color: #fff;
     border: none;
     height: 58px;
+
+    margin-bottom: 3rem;
 }
 
 .input___pin {

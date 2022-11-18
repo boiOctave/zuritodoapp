@@ -2,34 +2,44 @@
     position: fixed;
     top: 0;
     right: 0;
-    min-width: 1190px;
+    min-width: 100%;
 
     padding: 1rem;
+    background-color: #f6fafb;
+    border-bottom: 2px solid #e9f3f5;
 }
+
 .nav {
     padding: 1.3rem 3rem;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .nav__content {
+    width: 80%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.section__name {
+    position: relative;
 }
 .section__name h3 {
     font-size: 2rem;
     font-weight: 700;
 }
+
 .section__name::after {
     content: "'";
     position: absolute;
-    bottom: 0;
-    left: 29px;
+    bottom: -28px;
+    left: -7px;
     width: 11rem;
     height: 4px;
     background-color: #714dd9;
 }
-
-.profile__section {
+.profile__section .Profile__section__list {
     display: flex;
     align-items: center;
     gap: 1.4rem;
@@ -38,14 +48,42 @@
 .profile__section span {
     font-size: 1.4rem;
 }
+.hamburgerMenu {
+    display: none;
+}
 
-.header {
-    position: fixed;
-    top: 0;
-    right: 0;
-    min-width: 1190px;
+@media screen and (max-width: 1226px) {
+    .nav__content {
+        width: 75%;
+    }
+}
+@media screen and (max-width: 1049px) {
+    .nav__content {
+        width: 72%;
+    }
+}
+@media screen and (max-width: 929px) {
+    .nav__content {
+        width: 60%;
+    }
+}
+@media screen and (max-width: 816px) {
+    .nav__content {
+        width: 60%;
+    }
+}
 
-    padding: 1rem;
-    background-color: #f6fafb;
-    border-bottom: 2px solid #e9f3f5;
+@media screen and (max-width: 780px) {
+    .hamburgerMenu {
+        display: block;
+    }
+    .section__name {
+        display: none;
+    }
+    .nav {
+        justify-content: space-between;
+    }
+    .nav__content {
+        width: 100%;
+    }
 }
